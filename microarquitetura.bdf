@@ -1,0 +1,153 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 144 120 312 136)
+	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
+	(text "clk_clk" (rect 5 0 39 11)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 149 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 112 240 312 256)
+	(text "INPUT" (rect 157 0 186 10)(font "Arial" (font_size 6)))
+	(text "switches_export[7..0]" (rect 5 0 108 11)(font "Arial" ))
+	(pt 200 8)
+	(drawing
+		(line (pt 116 12)(pt 141 12))
+		(line (pt 116 4)(pt 141 4))
+		(line (pt 145 8)(pt 200 8))
+		(line (pt 116 12)(pt 116 4))
+		(line (pt 141 4)(pt 145 8))
+		(line (pt 141 12)(pt 145 8))
+	)
+	(text "VCC" (rect 160 7 181 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 136 160 312 176)
+	(text "OUTPUT" (rect 135 6 175 16)(font "Arial" (font_size 6)))
+	(text "leds_export[7..0]" (rect 5 5 86 16)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 176 8)(pt 124 8))
+		(line (pt 124 12)(pt 98 12))
+		(line (pt 124 4)(pt 98 4))
+		(line (pt 124 4)(pt 124 12))
+		(line (pt 98 12)(pt 94 8))
+		(line (pt 94 8)(pt 98 4))
+		(line (pt 98 4)(pt 94 8))
+	)
+	(rotate180)
+)
+(symbol
+	(rect 312 56 632 280)
+	(text "microarquiteturaQsys" (rect 97 -1 248 15)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 208 26 219)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 40 13)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 44 74)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 128 72))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "reset_reset_n" (rect 0 0 79 13)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 141 83 154)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 128 152))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "switches_export[7..0]" (rect 0 0 120 13)(font "Arial" (font_size 8)))
+		(text "switches_export[7..0]" (rect 4 181 124 194)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 128 192)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "leds_export[7..0]" (rect 0 0 94 13)(font "Arial" (font_size 8)))
+		(text "leds_export[7..0]" (rect 4 101 98 114)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 128 112)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 113 43 133 57)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 133 67 148 78)(font "Arial" (color 0 0 0)))
+		(text "leds" (rect 105 83 132 97)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 133 107 164 118)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 99 123 133 137)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 133 147 171 158)(font "Arial" (color 0 0 0)))
+		(text "switches" (rect 78 163 133 177)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 133 187 164 198)(font "Arial" (color 0 0 0)))
+		(text " microarquiteturaQsys " (rect 224 208 334 219)(font "Arial" ))
+		(line (pt 128 32)(pt 192 32))
+		(line (pt 192 32)(pt 192 208))
+		(line (pt 128 208)(pt 192 208))
+		(line (pt 128 32)(pt 128 208))
+		(line (pt 129 52)(pt 129 76))
+		(line (pt 130 52)(pt 130 76))
+		(line (pt 129 92)(pt 129 116))
+		(line (pt 130 92)(pt 130 116))
+		(line (pt 129 132)(pt 129 156))
+		(line (pt 130 132)(pt 130 156))
+		(line (pt 129 172)(pt 129 196))
+		(line (pt 130 172)(pt 130 196))
+		(line (pt 0 0)(pt 320 0))
+		(line (pt 320 0)(pt 320 224))
+		(line (pt 0 224)(pt 320 224))
+		(line (pt 0 0)(pt 0 224))
+	)
+)
+(symbol
+	(rect 224 184 256 200)
+	(text "VCC" (rect 7 0 28 10)(font "Arial" (font_size 6)))
+	(text "inst1" (rect 3 5 27 18)(font "Intel Clear" )(invisible))
+	(port
+		(pt 16 16)
+		(output)
+		(text "1" (rect 19 7 27 18)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 19 7 27 18)(font "Courier New" (bold))(invisible))
+		(line (pt 16 16)(pt 16 8))
+	)
+	(drawing
+		(line (pt 8 8)(pt 24 8))
+	)
+)
+(connector
+	(pt 240 200)
+	(pt 240 208)
+)
+(connector
+	(pt 240 208)
+	(pt 312 208)
+)
