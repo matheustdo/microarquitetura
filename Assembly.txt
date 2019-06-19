@@ -1,0 +1,91 @@
+.data
+
+.global_start
+
+.equ L, 0x4C
+.equ E, 0x45
+.equ D, 0x44
+.equ Um, 0x31
+.equ Dois, 0x32
+.equ Tres, 0x33
+.equ Quatro, 0x34
+.equ Cinco, 0x35
+.equ space, 0xA0
+
+movia r3, 1
+
+.text
+
+init_lcd:
+
+	//o valor de r0 (0) é passado para a entrada dataA, que é o bit de seleção (0 = comando, 1 = dado) 
+	//o valor de r1 é pasado para dataB, são valores especificados pelo fabricante para a inicilaização
+
+
+	//0x30 é passado duas vezes para a instrução
+	movia r1, 0x30
+	custom0 r2, r0, r1
+	custom0 r2, r0, r1
+
+	movia r1, 0x39
+	custom0 r2, r0, r1
+
+	movia r1, 0x14
+	custom0 r2, r0, r1
+
+	movia r1, 0x56
+	custom0 r2, r0, r1
+
+	movia r1, 0x6D
+	custom0 r2, r0, r1
+
+	movia r1, 0x70
+	custom0 r2, r0, r1
+
+	movia r1, 0x0C
+	custom0 r2, r0, r1
+
+	movia r1, 0x06
+	custom0 r2, r0, r1
+
+	movia r1, 0x01
+	custom0 r2, r0, r1
+	
+	
+menu_lcd:
+	
+	movia r1, L
+	custom0 r2, r3, r1
+	
+	movia r1, E
+	custom0 r2, r3, r1
+	
+	movia r1, D
+	custom0 r2, r3, r1
+	
+	movia r1, space
+	custom0 r2, r3, r1
+	
+	
+	
+led1:
+	movia r4, Um
+	custom0 r2, r3, r4 
+	
+	
+	
+led2:
+	movia r4, Dois
+	custom0 r2, r3, r4 
+	
+led3:
+	movia r4, Tres
+	custom0 r2, r3, r4 
+	
+led4:
+	movia r4, Quatro
+	custom0 r2, r3, r4 
+
+led5:
+	movia r4, Cinco
+	custom0 r2, r3, r4 
