@@ -1,0 +1,12 @@
+
+module init_lcd (dataA, dataB, result,clk, clk_en, reset, start, done, read_write, register_select, enable_op, data_out);
+
+	input clk, clk_en, reset, start;
+	input dataA, dataB;
+
+	output result;
+	output read_write, register_select, enable_op, done; 
+	output [7:0] data_out;
+
+
+endmodule
