@@ -4,14 +4,14 @@
 
 `timescale 1 ps / 1 ps
 module microarquiteturaQsys (
-		input  wire       clk_clk,             //      clk.clk
-		output wire       lcd_read_write,      //      lcd.read_write
-		output wire       lcd_register_select, //         .register_select
-		output wire [7:0] lcd_data_out,        //         .data_out
-		output wire       lcd_enable_op,       //         .enable_op
-		output wire [7:0] leds_export,         //     leds.export
-		input  wire       reset_reset_n,       //    reset.reset_n
-		input  wire [7:0] switches_export      // switches.export
+		input  wire [3:0] buttons_export,      // buttons.export
+		input  wire       clk_clk,             //     clk.clk
+		output wire       lcd_read_write,      //     lcd.read_write
+		output wire       lcd_register_select, //        .register_select
+		output wire [7:0] lcd_data_out,        //        .data_out
+		output wire       lcd_enable_op,       //        .enable_op
+		output wire [4:0] leds_export,         //    leds.export
+		input  wire       reset_reset_n        //   reset.reset_n
 	);
 
 	wire         nios2_gen2_0_custom_instruction_master_readra;                                   // nios2_gen2_0:D_ci_readra -> nios2_gen2_0_custom_instruction_master_translator:ci_slave_readra
@@ -108,16 +108,16 @@ module microarquiteturaQsys (
 	wire         mm_interconnect_0_onchip_memory2_0_s1_write;                                     // mm_interconnect_0:onchip_memory2_0_s1_write -> onchip_memory2_0:write
 	wire  [31:0] mm_interconnect_0_onchip_memory2_0_s1_writedata;                                 // mm_interconnect_0:onchip_memory2_0_s1_writedata -> onchip_memory2_0:writedata
 	wire         mm_interconnect_0_onchip_memory2_0_s1_clken;                                     // mm_interconnect_0:onchip_memory2_0_s1_clken -> onchip_memory2_0:clken
-	wire  [31:0] mm_interconnect_0_switches_s1_readdata;                                          // switches:readdata -> mm_interconnect_0:switches_s1_readdata
-	wire   [1:0] mm_interconnect_0_switches_s1_address;                                           // mm_interconnect_0:switches_s1_address -> switches:address
 	wire         mm_interconnect_0_leds_s1_chipselect;                                            // mm_interconnect_0:leds_s1_chipselect -> leds:chipselect
 	wire  [31:0] mm_interconnect_0_leds_s1_readdata;                                              // leds:readdata -> mm_interconnect_0:leds_s1_readdata
 	wire   [1:0] mm_interconnect_0_leds_s1_address;                                               // mm_interconnect_0:leds_s1_address -> leds:address
 	wire         mm_interconnect_0_leds_s1_write;                                                 // mm_interconnect_0:leds_s1_write -> leds:write_n
 	wire  [31:0] mm_interconnect_0_leds_s1_writedata;                                             // mm_interconnect_0:leds_s1_writedata -> leds:writedata
+	wire  [31:0] mm_interconnect_0_buttons_s1_readdata;                                           // buttons:readdata -> mm_interconnect_0:buttons_s1_readdata
+	wire   [1:0] mm_interconnect_0_buttons_s1_address;                                            // mm_interconnect_0:buttons_s1_address -> buttons:address
 	wire         irq_mapper_receiver0_irq;                                                        // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                                            // irq_mapper:sender_irq -> nios2_gen2_0:irq
-	wire         rst_controller_reset_out_reset;                                                  // rst_controller:reset_out -> [irq_mapper:reset, jtag_uart_0:rst_n, leds:reset_n, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, onchip_memory2_0:reset, rst_translator:in_reset, switches:reset_n]
+	wire         rst_controller_reset_out_reset;                                                  // rst_controller:reset_out -> [buttons:reset_n, irq_mapper:reset, jtag_uart_0:rst_n, leds:reset_n, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, onchip_memory2_0:reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                                              // rst_controller:reset_req -> [nios2_gen2_0:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
 
 	init_lcd #(
@@ -137,6 +137,14 @@ module microarquiteturaQsys (
 		.register_select (lcd_register_select),                                                             //                              .register_select
 		.data_out        (lcd_data_out),                                                                    //                              .data_out
 		.enable_op       (lcd_enable_op)                                                                    //                              .enable_op
+	);
+
+	microarquiteturaQsys_buttons buttons (
+		.clk      (clk_clk),                               //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),       //               reset.reset_n
+		.address  (mm_interconnect_0_buttons_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_buttons_s1_readdata), //                    .readdata
+		.in_port  (buttons_export)                         // external_connection.export
 	);
 
 	microarquiteturaQsys_jtag_uart_0 jtag_uart_0 (
@@ -221,14 +229,6 @@ module microarquiteturaQsys (
 		.reset      (rst_controller_reset_out_reset),                   // reset1.reset
 		.reset_req  (rst_controller_reset_out_reset_req),               //       .reset_req
 		.freeze     (1'b0)                                              // (terminated)
-	);
-
-	microarquiteturaQsys_switches switches (
-		.clk      (clk_clk),                                //                 clk.clk
-		.reset_n  (~rst_controller_reset_out_reset),        //               reset.reset_n
-		.address  (mm_interconnect_0_switches_s1_address),  //                  s1.address
-		.readdata (mm_interconnect_0_switches_s1_readdata), //                    .readdata
-		.in_port  (switches_export)                         // external_connection.export
 	);
 
 	altera_customins_master_translator #(
@@ -389,6 +389,8 @@ module microarquiteturaQsys (
 		.nios2_gen2_0_instruction_master_waitrequest    (nios2_gen2_0_instruction_master_waitrequest),                 //                                         .waitrequest
 		.nios2_gen2_0_instruction_master_read           (nios2_gen2_0_instruction_master_read),                        //                                         .read
 		.nios2_gen2_0_instruction_master_readdata       (nios2_gen2_0_instruction_master_readdata),                    //                                         .readdata
+		.buttons_s1_address                             (mm_interconnect_0_buttons_s1_address),                        //                               buttons_s1.address
+		.buttons_s1_readdata                            (mm_interconnect_0_buttons_s1_readdata),                       //                                         .readdata
 		.jtag_uart_0_avalon_jtag_slave_address          (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_address),     //            jtag_uart_0_avalon_jtag_slave.address
 		.jtag_uart_0_avalon_jtag_slave_write            (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_write),       //                                         .write
 		.jtag_uart_0_avalon_jtag_slave_read             (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_read),        //                                         .read
@@ -415,9 +417,7 @@ module microarquiteturaQsys (
 		.onchip_memory2_0_s1_writedata                  (mm_interconnect_0_onchip_memory2_0_s1_writedata),             //                                         .writedata
 		.onchip_memory2_0_s1_byteenable                 (mm_interconnect_0_onchip_memory2_0_s1_byteenable),            //                                         .byteenable
 		.onchip_memory2_0_s1_chipselect                 (mm_interconnect_0_onchip_memory2_0_s1_chipselect),            //                                         .chipselect
-		.onchip_memory2_0_s1_clken                      (mm_interconnect_0_onchip_memory2_0_s1_clken),                 //                                         .clken
-		.switches_s1_address                            (mm_interconnect_0_switches_s1_address),                       //                              switches_s1.address
-		.switches_s1_readdata                           (mm_interconnect_0_switches_s1_readdata)                       //                                         .readdata
+		.onchip_memory2_0_s1_clken                      (mm_interconnect_0_onchip_memory2_0_s1_clken)                  //                                         .clken
 	);
 
 	microarquiteturaQsys_irq_mapper irq_mapper (

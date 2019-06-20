@@ -1,16 +1,10 @@
-Fitter Status : Successful - Thu Apr  4 01:02:21 2019
+I/O Assignment Analysis Status : Successful - Thu Jun 20 16:46:12 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : microarquitetura
 Top-level Entity Name : microarquitetura
 Family : Cyclone IV E
 Device : EP4CE30F23C7
 Timing Models : Final
-Total logic elements : 1,732 / 28,848 ( 6 % )
-    Total combinational functions : 1,621 / 28,848 ( 6 % )
-    Dedicated logic registers : 931 / 28,848 ( 3 % )
-Total registers : 931
 Total pins : 17 / 329 ( 5 % )
 Total virtual pins : 0
-Total memory bits : 44,032 / 608,256 ( 7 % )
-Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )

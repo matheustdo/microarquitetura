@@ -10,7 +10,7 @@ module init_lcd (dataA, dataB, result,clk, clk_en, reset, start, done, read_writ
 	output reg [31:0] result;
 	output reg register_select, enable_op, done;
 	
-	reg state;
+	reg [1:0] state;
 	reg [31:0] counter;
 	
 	parameter idle_state = 2'b00, busy_state = 2'b01, end_state = 2'b11;  
@@ -20,10 +20,10 @@ module init_lcd (dataA, dataB, result,clk, clk_en, reset, start, done, read_writ
 	
 		if (reset) begin
 			
-			counter <= 32'b0;
+			counter <= 32'd0;
 			register_select <= 1'b0;
 			state <= idle_state;
-			result <= 32'b0;
+			result <= 32'd0;
 			data_out <= 8'b0;
 			done <= 1'b0;
 			enable_op <= 1'b1;
@@ -52,7 +52,7 @@ module init_lcd (dataA, dataB, result,clk, clk_en, reset, start, done, read_writ
 					
 					busy_state: begin
 						
-						if (counter < 100000) begin
+						if (counter < 32'd100000) begin
 							
 							counter <= counter + 32'd1;
 							
@@ -70,7 +70,7 @@ module init_lcd (dataA, dataB, result,clk, clk_en, reset, start, done, read_writ
 					
 					end_state: begin
 					
-						if (counter < 100000) begin
+						if (counter < 32'd100000) begin
 								
 								counter <= counter + 32'd1;
 								
@@ -78,7 +78,7 @@ module init_lcd (dataA, dataB, result,clk, clk_en, reset, start, done, read_writ
 							
 							else begin
 								
-								result <= 32'd0;
+								result <= 32'd1;
 								done <= 1'b1;
 								state <= idle_state;
 								

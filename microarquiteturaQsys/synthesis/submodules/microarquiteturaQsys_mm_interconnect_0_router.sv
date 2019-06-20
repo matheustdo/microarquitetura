@@ -47,7 +47,7 @@ module microarquiteturaQsys_mm_interconnect_0_router_default_decode
      parameter DEFAULT_CHANNEL = 2,
                DEFAULT_WR_CHANNEL = -1,
                DEFAULT_RD_CHANNEL = -1,
-               DEFAULT_DESTID = 3 
+               DEFAULT_DESTID = 4 
    )
   (output [76 - 74 : 0] default_destination_id,
    output [5-1 : 0] default_wr_channel,
@@ -200,31 +200,31 @@ module microarquiteturaQsys_mm_interconnect_0_router
     // ( 0x0 .. 0x1000 )
     if ( {address[RG:PAD0],{PAD0{1'b0}}} == 14'h0   ) begin
             src_channel = 5'b00100;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 4;
     end
 
     // ( 0x1800 .. 0x2000 )
     if ( {address[RG:PAD1],{PAD1{1'b0}}} == 14'h1800   ) begin
             src_channel = 5'b00010;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
     end
 
     // ( 0x2020 .. 0x2030 )
-    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 14'h2020   ) begin
+    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 14'h2020  && read_transaction  ) begin
             src_channel = 5'b10000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
     end
 
     // ( 0x2030 .. 0x2040 )
-    if ( {address[RG:PAD3],{PAD3{1'b0}}} == 14'h2030  && read_transaction  ) begin
+    if ( {address[RG:PAD3],{PAD3{1'b0}}} == 14'h2030   ) begin
             src_channel = 5'b01000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 4;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end
 
     // ( 0x2048 .. 0x2050 )
     if ( {address[RG:PAD4],{PAD4{1'b0}}} == 14'h2048   ) begin
             src_channel = 5'b00001;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end
 
 end

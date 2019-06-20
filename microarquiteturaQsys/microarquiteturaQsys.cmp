@@ -1,13 +1,13 @@
 	component microarquiteturaQsys is
 		port (
+			buttons_export      : in  std_logic_vector(3 downto 0) := (others => 'X'); -- export
 			clk_clk             : in  std_logic                    := 'X';             -- clk
 			lcd_read_write      : out std_logic;                                       -- read_write
 			lcd_register_select : out std_logic;                                       -- register_select
 			lcd_data_out        : out std_logic_vector(7 downto 0);                    -- data_out
 			lcd_enable_op       : out std_logic;                                       -- enable_op
-			leds_export         : out std_logic_vector(7 downto 0);                    -- export
-			reset_reset_n       : in  std_logic                    := 'X';             -- reset_n
-			switches_export     : in  std_logic_vector(7 downto 0) := (others => 'X')  -- export
+			leds_export         : out std_logic_vector(4 downto 0);                    -- export
+			reset_reset_n       : in  std_logic                    := 'X'              -- reset_n
 		);
 	end component microarquiteturaQsys;
 
