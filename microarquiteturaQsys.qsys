@@ -9,6 +9,14 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element LCD_Custom_instruction_0
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+   }
    element clk_0
    {
       datum _sortIndex
@@ -62,6 +70,38 @@
       datum baseAddress
       {
          value = "8224";
+         type = "String";
+      }
+   }
+   element microarquiteturaQsys
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element microarquiteturaQsys
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element microarquiteturaQsys
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element microarquiteturaQsys
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
          type = "String";
       }
    }
@@ -141,6 +181,11 @@
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
+   name="lcd"
+   internal="LCD_Custom_instruction_0.conduit_end"
+   type="conduit"
+   dir="end" />
+ <interface
    name="leds"
    internal="leds.external_connection"
    type="conduit"
@@ -151,6 +196,15 @@
    internal="switches.external_connection"
    type="conduit"
    dir="end" />
+ <module
+   name="LCD_Custom_instruction_0"
+   kind="LCD_Custom_instruction"
+   version="1.0"
+   enabled="1">
+  <parameter name="busy_state" value="1" />
+  <parameter name="end_state" value="3" />
+  <parameter name="idle_state" value="0" />
+ </module>
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -207,7 +261,7 @@
   <parameter name="cpuArchRev" value="1" />
   <parameter name="cpuID" value="0" />
   <parameter name="cpuReset" value="false" />
-  <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
+  <parameter name="customInstSlavesSystemInfo"><![CDATA[<info><slave name="lcd_custom_instruction_0" baseAddress="0" addressSpan="1" clockCycleType="VARIABLE" /></info>]]></parameter>
   <parameter name="customInstSlavesSystemInfo_nios_a" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_b" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_c" value="&lt;info/&gt;" />
@@ -260,7 +314,7 @@
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="32" />
+  <parameter name="internalIrqMaskSystemInfo" value="1" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -508,10 +562,10 @@
   <parameter name="baseAddress" value="0x2020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection kind="clock" version="18.1" start="clk_0.clk" end="nios2_gen2_0.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="switches.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="leds.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="jtag_uart_0.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="nios2_gen2_0.clk" />
  <connection
    kind="clock"
    version="18.1"
@@ -522,13 +576,17 @@
    version="18.1"
    start="nios2_gen2_0.irq"
    end="jtag_uart_0.irq">
-  <parameter name="irqNumber" value="5" />
+  <parameter name="irqNumber" value="0" />
  </connection>
  <connection
-   kind="reset"
+   kind="nios_custom_instruction"
    version="18.1"
-   start="clk_0.clk_reset"
-   end="nios2_gen2_0.reset" />
+   start="nios2_gen2_0.custom_instruction_master"
+   end="LCD_Custom_instruction_0.nios_custom_instruction_slave">
+  <parameter name="CIName">lcd_custom_instruction_0</parameter>
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0" />
+ </connection>
  <connection
    kind="reset"
    version="18.1"
@@ -540,6 +598,11 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="jtag_uart_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="nios2_gen2_0.reset" />
  <connection
    kind="reset"
    version="18.1"

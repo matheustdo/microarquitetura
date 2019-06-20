@@ -66,7 +66,7 @@ module microarquiteturaQsys_nios2_gen2_0_cpu_test_bench (
   input   [  4: 0] R_dst_regnum;
   input            R_wr_dst_reg;
   input            W_valid;
-  input   [ 71: 0] W_vinst;
+  input   [191: 0] W_vinst;
   input   [ 31: 0] W_wr_data;
   input   [ 31: 0] av_ld_data_aligned_unfiltered;
   input            clk;
@@ -126,6 +126,7 @@ wire             D_op_initi;
 wire             D_op_intr;
 wire             D_op_jmp;
 wire             D_op_jmpi;
+wire             D_op_lcd_custom_instruction_0;
 wire             D_op_ldb;
 wire             D_op_ldbio;
 wire             D_op_ldbu;
@@ -370,6 +371,7 @@ wire             test_has_ended;
   assign D_op_intr = (D_iw_opx == 61) & D_is_opx_inst;
   assign D_op_crst = (D_iw_opx == 62) & D_is_opx_inst;
   assign D_op_opx_rsv63 = (D_iw_opx == 63) & D_is_opx_inst;
+  assign D_op_lcd_custom_instruction_0 = D_op_custom & 1'b1;
   assign D_is_opx_inst = D_iw_op == 58;
   assign test_has_ended = 1'b0;
 
