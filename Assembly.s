@@ -21,11 +21,8 @@
 .equ H, 0x48
 .equ S, 0x53
 
-
 .equ clear, 0x01
 .equ home, 0x02
-
-
 .equ space, 0xA0
 
 addi r1, r0, 1
@@ -42,6 +39,13 @@ movia r6, 0x2030 #leds
 #r4 guarda os números das leds a serem alterados no display (de acordo com a rolagem do menu) [
 #r5 guarda o endereço de memória dos  botões
 #r6 guarda o endereço de memória das leds
+
+#Botões:
+# 1 - volta ao menu -  0001 (1)
+# 2 - seleciona -      0010 (2)
+# 3 - rola pra baixo - 0100 (4)
+# 4 - rola pra cima -  1000 (8)
+
 
 #custom <id da instrução> <result> <dataA> <dataB>
 
@@ -79,13 +83,15 @@ init_lcd:
 	movia r3, 0x01
 	custom 0 r2, r0, r3
 	
+	br led1
+	
 
 #Nesta label a instrução customizada está sendo chamada novamente: 
 #r3 indica que está sendo enviado um dado e r1 é o dado a ser escrito no display
 	
 menu_lcd:
 
-	stbio r0, 0(r6)
+	stbio r0, 0(r6) #Apaga todas as leds
 
 	movia r3, clear
 	custom 0 r2, r0, r3
@@ -105,12 +111,17 @@ menu_lcd:
 	movia r3, space
 	custom 0 r2, r1, r3
 	
-	br led1
+	custom 0 r2, r1, r4
+	
+	ret
 	
 led1:
 	movia r4, Um
-	custom 0 r2, r1, r4 
 	
+	call menu_lcd #atualiza o display
+
+	
+	################################
 	
 	stbio r1, 0(r6) #Acende LED1
 	call frase_selection1 
@@ -118,7 +129,10 @@ led1:
 	
 led2:
 	movia r4, Dois
-	custom 0 r2, r1, r4 
+	
+	call menu_lcd
+	
+	#############
 	
 	movi r3, 2
 	stbio r3, 0(r6)
@@ -126,7 +140,10 @@ led2:
 	
 led3:
 	movia r4, Tres
-	custom 0 r2, r1, r4 
+	
+	call menu_lcd 
+	
+	#############
 	
 	movi r3, 4
 	stbio r3, 0(r6)
@@ -134,7 +151,10 @@ led3:
 	
 led4:
 	movia r4, Quatro
-	custom 0 r2, r1, r4 
+	
+	call menu_lcd 
+	
+	#############
 	
 	movi r3, 8
 	stbio r3, 0(r6)
@@ -142,7 +162,10 @@ led4:
 
 led5:
 	movia r4, Cinco
-	custom 0 r2, r1, r4 
+	
+	call menu_lcd 
+	
+	#############
 	
 	movi r3, 16
 	stbio r3, 0(r6)
@@ -201,6 +224,10 @@ frase_selection1:
 	movia r3, Um
 	custom 0 r2, r1, r3
 	
+	###################
+	
+	br led1
+	
 	
 
 frase_selection2:
@@ -256,6 +283,10 @@ frase_selection2:
 	movia r3, Dois
 	custom 0 r2, r1, r3
 	
+	###################
+	
+	br led2
+	
 frase_selection3:
 
 	movia r3, clear
@@ -308,6 +339,10 @@ frase_selection3:
 	
 	movia r3, Tres
 	custom 0 r2, r1, r3
+	
+	###################
+	
+	br led3
 	
 frase_selection4:
 
@@ -362,6 +397,10 @@ frase_selection4:
 	movia r3, Quatro
 	custom 0 r2, r1, r3
 	
+	###################
+	
+	br led4
+	
 frase_selection5:
 
 	movia r3, clear
@@ -414,3 +453,7 @@ frase_selection5:
 	
 	movia r3, Cinco
 	custom 0 r2, r1, r3
+	
+	###################
+	
+	br led5
