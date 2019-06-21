@@ -7,3 +7,9 @@ DRsize.010 0 0 0 1 0 1
 DRsize.011 0 0 1 0 0 1 
 DRsize.100 0 1 0 0 0 1 
 DRsize.101 1 0 0 0 0 1 
+
+State Machine - |microarquitetura|microarquiteturaQsys:inst|init_lcd:lcd_custom_instruction_0|state
+Name state.busy_state state.end_state state.idle_state 
+state.idle_state 0 0 0 
+state.busy_state 1 0 1 
+state.end_state 0 1 1 

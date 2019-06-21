@@ -21,9 +21,9 @@ refer to the applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 168 144 336 160)
+	(rect 72 96 240 112)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "clk" (rect 5 0 19 12)(font "Arial" ))
+	(text "buttons[3..0]" (rect 5 0 68 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -37,9 +37,9 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 168 104 336 120)
+	(rect 72 136 240 152)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "pin_name6" (rect 5 0 58 17)(font "Intel Clear" ))
+	(text "clk" (rect 5 0 20 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -53,9 +53,9 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 160 184 336 200)
+	(rect 56 208 232 224)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "pin_name1" (rect 33 0 86 12)(font "Arial" ))
+	(text "data_out[7..0]" (rect 5 0 71 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -70,9 +70,9 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 160 200 336 216)
+	(rect 56 264 232 280)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "pin_name2" (rect 33 0 86 17)(font "Intel Clear" ))
+	(text "leds[4..0]" (rect 5 0 48 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -87,9 +87,9 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 160 216 336 232)
+	(rect 56 176 232 192)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "pin_name3" (rect 33 0 86 17)(font "Intel Clear" ))
+	(text "read_write" (rect 5 0 56 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -104,9 +104,9 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 160 232 336 248)
+	(rect 56 192 232 208)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "pin_name4" (rect 33 0 86 17)(font "Intel Clear" ))
+	(text "register_select" (rect 5 0 75 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -121,9 +121,9 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 160 272 336 288)
+	(rect 56 224 232 240)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "pin_name5" (rect 33 0 86 17)(font "Intel Clear" ))
+	(text "enable_op" (rect 5 0 56 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -137,22 +137,7 @@ refer to the applicable agreement for further details.
 	(flipy)
 )
 (symbol
-	(rect 320 304 352 320)
-	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
-	(text "inst1" (rect 3 5 25 22)(font "Intel Clear" )(invisible))
-	(port
-		(pt 16 16)
-		(output)
-		(text "1" (rect 19 7 24 19)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 19 7 24 19)(font "Courier New" (bold))(invisible))
-		(line (pt 16 16)(pt 16 8))
-	)
-	(drawing
-		(line (pt 8 8)(pt 24 8))
-	)
-)
-(symbol
-	(rect 368 40 672 352)
+	(rect 264 32 568 344)
 	(text "microarquiteturaQsys" (rect 89 -1 235 15)(font "Arial" (font_size 10)))
 	(text "inst" (rect 8 296 25 308)(font "Arial" ))
 	(port
@@ -246,38 +231,53 @@ refer to the applicable agreement for further details.
 		(line (pt 0 0)(pt 0 312))
 	)
 )
-(connector
-	(pt 368 320)
-	(pt 336 320)
+(symbol
+	(rect 184 296 216 312)
+	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
+	(text "inst1" (rect 3 5 25 22)(font "Intel Clear" )(invisible))
+	(port
+		(pt 16 16)
+		(output)
+		(text "1" (rect 19 7 24 19)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 19 7 24 19)(font "Courier New" (bold))(invisible))
+		(line (pt 16 16)(pt 16 8))
+	)
+	(drawing
+		(line (pt 8 8)(pt 24 8))
+	)
 )
 (connector
-	(pt 336 192)
-	(pt 368 192)
+	(pt 240 144)
+	(pt 264 144)
 )
 (connector
-	(pt 336 208)
-	(pt 368 208)
-)
-(connector
-	(pt 336 224)
-	(pt 368 224)
+	(pt 240 104)
+	(pt 264 104)
 	(bus)
 )
 (connector
-	(pt 336 240)
-	(pt 368 240)
+	(pt 232 184)
+	(pt 264 184)
 )
 (connector
-	(pt 368 152)
-	(pt 336 152)
+	(pt 232 200)
+	(pt 264 200)
 )
 (connector
-	(pt 336 280)
-	(pt 368 280)
+	(pt 232 216)
+	(pt 264 216)
 	(bus)
 )
 (connector
-	(pt 336 112)
-	(pt 368 112)
+	(pt 232 232)
+	(pt 264 232)
+)
+(connector
+	(pt 232 272)
+	(pt 264 272)
 	(bus)
+)
+(connector
+	(pt 264 312)
+	(pt 200 312)
 )

@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Apr  4 01:01:40 2019
+Analysis & Synthesis Status : Successful - Fri Jun 21 00:44:42 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : microarquitetura
 Top-level Entity Name : microarquitetura
 Family : Cyclone IV E
-Total logic elements : 1,808
-    Total combinational functions : 1,617
-    Dedicated logic registers : 939
-Total registers : 939
-Total pins : 17
+Total logic elements : 1,886
+    Total combinational functions : 1,702
+    Dedicated logic registers : 973
+Total registers : 973
+Total pins : 21
 Total virtual pins : 0
 Total memory bits : 44,032
 Embedded Multiplier 9-bit elements : 0
