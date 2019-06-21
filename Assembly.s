@@ -1,9 +1,9 @@
 .data
 
-.global_start
+.global main
 
-#.equ <nome> <valor hex>
-#Este bloco armazena os valores, em hexadecimal, correspondentes ao que deve ser printado no display 
+# .equ <nome> <valor hex>
+# Este bloco armazena os valores, em hexadecimal, correspondentes ao que deve ser printado no display 
 
 .equ L, 0x4C
 .equ E, 0x45
@@ -27,31 +27,37 @@
 
 addi r1, r0, 1
 
-movia r5, 0x2020 #buttons
-movia r6, 0x2030 #leds
+movia r5, 0x2020 # endereço de memórios dos botões
+movia r6, 0x2030 # endereço de memória dosleds
 
 
 .text
 
-#r1 contêm o valor 1 (um)
-#r2 guarda recebe os resultados da intrução customizada do lcd
-#r3 guarda valores temporários 
-#r4 guarda os números das leds a serem alterados no display (de acordo com a rolagem do menu) [
-#r5 guarda o endereço de memória dos  botões
-#r6 guarda o endereço de memória das leds
+# r1 contêm o valor 1 (um)
+# r2 guarda recebe os resultados da intrução customizada do lcd
+# r3 guarda valores temporários 
+# r4 guarda os números das leds a serem alterados no display (de acordo com a rolagem do menu) [
+# r5 guarda o endereço de memória dos  botões
+# r6 guarda o endereço de memória das leds
+# r7 guarda valores temporários
 
-#Botões:
+# Codificação dos Botões:
 # 1 - volta ao menu -  0001 (1)
 # 2 - seleciona -      0010 (2)
 # 3 - rola pra baixo - 0100 (4)
 # 4 - rola pra cima -  1000 (8)
 
+# Codificação das Leds
+# LED1 - 00001 (1)
+# LED2 - 00010 (2)
+# LED3 - 00100 (4)
+# LED4 - 01000 (8)
+# LED5 - 10000 (16)
 
-#custom <id da instrução> <result> <dataA> <dataB>
+# custom <id da instrução> <result> <dataA> <dataB>
 
-
-#Nesta label a instrução customizada é chamada com os parâmetros dos registradores r0 e r1
-#Nesse caso r0 indica ao lcd que está sendo enviado um comando e r1 é o comando a ser executado
+# Nesta label a instrução customizada é chamada com os parâmetros dos registradores r0 e r1
+# Nesse caso r0 indica ao lcd que está sendo enviado um comando e r1 é o comando a ser executado
 
 init_lcd:
 
@@ -86,17 +92,17 @@ init_lcd:
 	br led1
 	
 
-#Nesta label a instrução customizada está sendo chamada novamente: 
-#r3 indica que está sendo enviado um dado e r1 é o dado a ser escrito no display
+# Nesta label a instrução customizada está sendo chamada novamente: 
+# r3 indica que está sendo enviado um dado e r1 é o dado a ser escrito no display
 	
 menu_lcd:
 
-	stbio r0, 0(r6) #Apaga todas as leds
+	stbio r0, 0(r6) # Apaga todas as leds
 
-	movia r3, clear
+	movia r3, clear # Limpa o display
 	custom 0 r2, r0, r3
 
-	movia r3, home
+	movia r3, home # Põe o cursor na primeira posição do display
 	custom 0 r2, r0, r3
 	
 	movia r3, L
@@ -118,12 +124,23 @@ menu_lcd:
 led1:
 	movia r4, Um
 	
-	call menu_lcd #atualiza o display
+	call menu_lcd # atualiza o display
+	
+	nextpc r7 # pega o endereço da próxima instrução
 
+	ldwio r3, 0(r5) # carrega a situação dos botões
 	
-	################################
+	bleu r3, r1, 0(r7) # se o valor dos botões for menor ou igual a 1 volta para a instrução anterior (nenhum botão foi pressionado ou o botão de voltar foi pressionado)
 	
-	stbio r1, 0(r6) #Acende LED1
+	addi r7, r0, 4
+	beq r3, r7, led2 # se o valor dos botões for igual a 4 desvia para a label led2 (rola pra baixo)
+	
+	addi r7, r0, 8
+	beq r3, r7, led5 # se o valor dos botões for igual a 8 desvia para a label led5 (rola pra cima)
+	
+	# ELSE, nesse caso foi pressionado o botão selecionar
+	
+	stbio r1, 0(r6) # Acende LED1
 	call frase_selection1 
 	
 	
@@ -132,7 +149,17 @@ led2:
 	
 	call menu_lcd
 	
-	#############
+	nextpc r7 
+
+	ldwio r3, 0(r5) 
+	
+	bleu r3, r1, 0(r7) 
+	
+	addi r7, r0, 4
+	beq r3, r7, led3 
+	
+	addi r7, r0, 8
+	beq r3, r7, led1 
 	
 	movi r3, 2
 	stbio r3, 0(r6)
@@ -143,7 +170,17 @@ led3:
 	
 	call menu_lcd 
 	
-	#############
+	nextpc r7 
+
+	ldwio r3, 0(r5) 
+	
+	bleu r3, r1, 0(r7) 
+	
+	addi r7, r0, 4
+	beq r3, r7, led4 
+	
+	addi r7, r0, 8
+	beq r3, r7, led3 
 	
 	movi r3, 4
 	stbio r3, 0(r6)
@@ -154,7 +191,17 @@ led4:
 	
 	call menu_lcd 
 	
-	#############
+	nextpc r7 
+
+	ldwio r3, 0(r5) 
+	
+	bleu r3, r1, 0(r7) 
+	
+	addi r7, r0, 4
+	beq r3, r7, led5 
+	
+	addi r7, r0, 8
+	beq r3, r7, led4 
 	
 	movi r3, 8
 	stbio r3, 0(r6)
@@ -165,7 +212,17 @@ led5:
 	
 	call menu_lcd 
 	
-	#############
+	nextpc r7 
+
+	ldwio r3, 0(r5) 
+	
+	bleu r3, r1, 0(r7) 
+	
+	addi r7, r0, 4
+	beq r3, r7, led1 
+	
+	addi r7, r0, 8
+	beq r3, r7, led4 
 	
 	movi r3, 16
 	stbio r3, 0(r6)
@@ -224,10 +281,13 @@ frase_selection1:
 	movia r3, Um
 	custom 0 r2, r1, r3
 	
-	###################
+	nextpc r7
+	
+	ldwio r3, 0(r5)
+	
+	bne r3, r1, 0(r7)
 	
 	br led1
-	
 	
 
 frase_selection2:
@@ -283,7 +343,11 @@ frase_selection2:
 	movia r3, Dois
 	custom 0 r2, r1, r3
 	
-	###################
+	nextpc r7
+	
+	ldwio r3, 0(r5)
+	
+	bne r3, r1, 0(r7)
 	
 	br led2
 	
@@ -340,7 +404,11 @@ frase_selection3:
 	movia r3, Tres
 	custom 0 r2, r1, r3
 	
-	###################
+	nextpc r7
+	
+	ldwio r3, 0(r5)
+	
+	bne r3, r1, 0(r7)
 	
 	br led3
 	
@@ -397,7 +465,11 @@ frase_selection4:
 	movia r3, Quatro
 	custom 0 r2, r1, r3
 	
-	###################
+	nextpc r7
+	
+	ldwio r3, 0(r5)
+	
+	bne r3, r1, 0(r7)
 	
 	br led4
 	
@@ -454,6 +526,10 @@ frase_selection5:
 	movia r3, Cinco
 	custom 0 r2, r1, r3
 	
-	###################
+	nextpc r7
+	
+	ldwio r3, 0(r5)
+	
+	bne r3, r1, 0(r7)
 	
 	br led5
