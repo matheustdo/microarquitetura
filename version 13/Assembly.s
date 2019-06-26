@@ -34,6 +34,7 @@
 # r5 guarda o endereço de memória dos  botões
 # r6 guarda o endereço de memória das leds
 # r7 guarda valores temporários
+# r8 guarda endereços de instruções temporariamente
 
 # Codificação dos Botões:
 # 1 - volta ao menu -  0001 (1)
@@ -125,22 +126,20 @@ led1:
 	
 	call menu_lcd # atualiza o display
 	
-	#nextpc r7 # pega o endereço da próxima instrução
+	nextpc r8 # pega o endereço da próxima instrução
 
-	ldwio r3, 0(r5) # carrega a situação dos botões
+	ldbuio r3, 0(r5) # carrega a situação dos botões
 	
-	br -0x4 # se o valor dos botões for menor ou igual a 1 volta para a instrução anterior (nenhum botão foi pressionado ou o botão de voltar foi pressionado)
-	
+	addi r7, r0, 2
+	beq r3, r7, frase_selection1
+
 	addi r7, r0, 4
 	beq r3, r7, led2 # se o valor dos botões for igual a 4 desvia para a label led2 (rola pra baixo)
 	
 	addi r7, r0, 8
 	beq r3, r7, led5 # se o valor dos botões for igual a 8 desvia para a label led5 (rola pra cima)
 	
-	# ELSE, nesse caso foi pressionado o botão selecionar
-	
-	stbio r14, 0(r6) # Acende LED1
-	br frase_selection1 
+	callr r8
 	
 	
 led2:
@@ -148,11 +147,12 @@ led2:
 	
 	call menu_lcd
 	
-	nextpc r7 
+	nextpc r8
 
-	ldwio r3, 0(r5) 
+	ldbuio r3, 0(r5) 
 	
-	bleu r3, r14, 0(r7)
+	addi r7, r0, 2
+	beq r3, r7, frase_selection2
 	
 	addi r7, r0, 4
 	beq r3, r7, led3 
@@ -160,74 +160,70 @@ led2:
 	addi r7, r0, 8
 	beq r3, r7, led1 
 	
-	movi r3, 2
-	stbio r3, 0(r6)
-	br frase_selection2
+	callr r8
 	
 led3:
 	movia r4, Tres
 	
 	call menu_lcd 
 	
-	nextpc r7 
+	nextpc r8
 
-	ldwio r3, 0(r5) 
+	ldbuio r3, 0(r5) 
 	
-	bleu r3, r14, 0(r7) 
+	addi r7, r0, 2
+	beq r3, r7, frase_selection3
 	
 	addi r7, r0, 4
 	beq r3, r7, led4 
 	
 	addi r7, r0, 8
 	beq r3, r7, led3 
-	
-	movi r3, 4
-	stbio r3, 0(r6)
-	br frase_selection3
+
+	callr r8
 	
 led4:
 	movia r4, Quatro
 	
 	call menu_lcd 
 	
-	nextpc r7 
+	nextpc r8
 
-	ldwio r3, 0(r5) 
+	ldbuio r3, 0(r5) 
 	
-	bleu r3, r14, 0(r7) 
-	
+	addi r7, r0, 2
+	beq r3, r7, frase_selection4
+
 	addi r7, r0, 4
 	beq r3, r7, led5 
 	
 	addi r7, r0, 8
 	beq r3, r7, led4 
 	
-	movi r3, 8
-	stbio r3, 0(r6)
-	br frase_selection4
+	callr r8
 
 led5:
 	movia r4, Cinco
 	
 	call menu_lcd 
-	
-	nextpc r7 
+	nextpc r8
 
-	ldwio r3, 0(r5) 
+	ldbuio r3, 0(r5) 
 	
-	bleu r3, r14, 0(r7) 
+	addi r7, r0, 2
+	beq r3, r7, frase_selection5
 	
 	addi r7, r0, 4
 	beq r3, r7, led1 
 	
 	addi r7, r0, 8
 	beq r3, r7, led4 
-	
-	movi r3, 16
-	stbio r3, 0(r6)
-	br frase_selection5
+
+	callr r8
 	
 frase_selection1:
+
+	stbio r14, 0(r6) # Acende LED1
 
 	movia r3, clear
 	custom 0, r2, r0, r3
@@ -280,16 +276,19 @@ frase_selection1:
 	movia r3, Um
 	custom 0, r2, r14, r3
 	
-	nextpc r7
+	nextpc r8
 	
-	ldwio r3, 0(r5)
+	ldbuio r3, 0(r5)
 	
-	bne r3, r14, 0(r7)
+	beq r3, r14, led1
 	
-	br led1
+	callr r8
 	
 
 frase_selection2:
+
+	movi r3, 2
+	stbio r3, 0(r6)
 
 	movia r3, clear
 	custom 0, r2, r0, r3
@@ -342,15 +341,19 @@ frase_selection2:
 	movia r3, Dois
 	custom 0, r2, r14, r3
 	
-	nextpc r7
+	nextpc r8
 	
-	ldwio r3, 0(r5)
+	ldbuio r3, 0(r5)
 	
-	bne r3, r14, 0(r7)
+	beq r3, r14, led2
 	
-	br led2
+	callr r8
+	
 	
 frase_selection3:
+
+	movi r3, 4
+	stbio r3, 0(r6)
 
 	movia r3, clear
 	custom 0, r2, r0, r3
@@ -403,15 +406,19 @@ frase_selection3:
 	movia r3, Tres
 	custom 0, r2, r14, r3
 	
-	nextpc r7
+	nextpc r8
 	
-	ldwio r3, 0(r5)
+	ldbuio r3, 0(r5)
 	
-	bne r3, r14, 0(r7)
+	beq r3, r14, led3
 	
-	br led3
+	callr r8
+	
 	
 frase_selection4:
+
+	movi r3, 8
+	stbio r3, 0(r6)
 
 	movia r3, clear
 	custom 0, r2, r0, r3
@@ -464,15 +471,19 @@ frase_selection4:
 	movia r3, Quatro
 	custom 0, r2, r14, r3
 	
-	nextpc r7
+	nextpc r8
 	
-	ldwio r3, 0(r5)
+	ldbuio r3, 0(r5)
 	
-	bne r3, r14, 0(r7)
+	beq r3, r14, led4
 	
-	br led4
+	callr r8
+	
 	
 frase_selection5:
+
+	movi r3, 16
+	stbio r3, 0(r6)
 
 	movia r3, clear
 	custom 0, r2, r0, r3
@@ -525,10 +536,11 @@ frase_selection5:
 	movia r3, Cinco
 	custom 0, r2, r14, r3
 	
-	nextpc r7
+	nextpc r8
 	
-	ldwio r3, 0(r5)
+	ldbuio r3, 0(r5)
 	
-	bne r3, r14, 0(r7)
+	beq r3, r14, led5
 	
-	br led5
+	callr r8
+	
