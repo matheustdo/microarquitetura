@@ -1,5 +1,5 @@
 Flow report for microarquiteturaGp3
-Tue Jun 25 17:28:03 2019
+Wed Jun 26 12:29:16 2019
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Tue Jun 25 17:28:03 2019           ;
+; Flow Status                        ; Successful - Wed Jun 26 12:29:16 2019           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; microarquiteturaGp3                             ;
 ; Top-level Entity Name              ; microarquiteturaGp3                             ;
 ; Family                             ; Cyclone IV E                                    ;
 ; Device                             ; EP4CE30F23C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 1,763 / 28,848 ( 6 % )                          ;
-;     Total combinational functions  ; 1,674 / 28,848 ( 6 % )                          ;
-;     Dedicated logic registers      ; 971 / 28,848 ( 3 % )                            ;
-; Total registers                    ; 971                                             ;
-; Total pins                         ; 22 / 329 ( 7 % )                                ;
+; Total logic elements               ; 1,832 / 28,848 ( 6 % )                          ;
+;     Total combinational functions  ; 1,725 / 28,848 ( 6 % )                          ;
+;     Dedicated logic registers      ; 1,001 / 28,848 ( 3 % )                          ;
+; Total registers                    ; 1001                                            ;
+; Total pins                         ; 30 / 329 ( 9 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 44,032 / 608,256 ( 7 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                                 ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/25/2019 17:25:23 ;
+; Start date & time ; 06/26/2019 12:26:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; microarquiteturaGp3 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+-----------------------------------------------------------------------+---------------+---------------------------------------------------------------------------+----------------+
 ; Assignment Name                     ; Value                                                                 ; Default Value ; Entity Name                                                               ; Section Id     ;
 +-------------------------------------+-----------------------------------------------------------------------+---------------+---------------------------------------------------------------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 105425943462.156149432320142                                          ; --            ; --                                                                        ; --             ;
+; COMPILER_SIGNATURE_ID               ; 105425943462.156156280917221                                          ; --            ; --                                                                        ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                                  ; --            ; --                                                                        ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                                ; <None>        ; --                                                                        ; --             ;
 ; IP_TOOL_ENV                         ; Qsys                                                                  ; --            ; altera_avalon_sc_fifo                                                     ; --             ;
@@ -94,7 +94,8 @@ applicable agreement for further details.
 ; IP_TOOL_ENV                         ; Qsys                                                                  ; --            ; microarquiteturaGp3_id_router                                             ; --             ;
 ; IP_TOOL_ENV                         ; Qsys                                                                  ; --            ; microarquiteturaGp3_irq_mapper                                            ; --             ;
 ; IP_TOOL_ENV                         ; Qsys                                                                  ; --            ; microarquiteturaGp3_jtag_uart_0                                           ; --             ;
-; IP_TOOL_ENV                         ; Qsys                                                                  ; --            ; microarquiteturaGp3_leds                                                  ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                                  ; --            ; microarquiteturaGp3_leds_columns                                          ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                                  ; --            ; microarquiteturaGp3_leds_rows                                             ; --             ;
 ; IP_TOOL_ENV                         ; Qsys                                                                  ; --            ; microarquiteturaGp3_nios2_qsys_0                                          ; --             ;
 ; IP_TOOL_ENV                         ; Qsys                                                                  ; --            ; microarquiteturaGp3_nios2_qsys_0_custom_instruction_master_multi_xconnect ; --             ;
 ; IP_TOOL_ENV                         ; Qsys                                                                  ; --            ; microarquiteturaGp3_onchip_memory2_0                                      ; --             ;
@@ -116,7 +117,8 @@ applicable agreement for further details.
 ; IP_TOOL_NAME                        ; altera_merlin_router                                                  ; --            ; microarquiteturaGp3_id_router                                             ; --             ;
 ; IP_TOOL_NAME                        ; altera_irq_mapper                                                     ; --            ; microarquiteturaGp3_irq_mapper                                            ; --             ;
 ; IP_TOOL_NAME                        ; altera_avalon_jtag_uart                                               ; --            ; microarquiteturaGp3_jtag_uart_0                                           ; --             ;
-; IP_TOOL_NAME                        ; altera_avalon_pio                                                     ; --            ; microarquiteturaGp3_leds                                                  ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                                     ; --            ; microarquiteturaGp3_leds_columns                                          ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                                     ; --            ; microarquiteturaGp3_leds_rows                                             ; --             ;
 ; IP_TOOL_NAME                        ; altera_nios2_qsys                                                     ; --            ; microarquiteturaGp3_nios2_qsys_0                                          ; --             ;
 ; IP_TOOL_NAME                        ; altera_customins_xconnect                                             ; --            ; microarquiteturaGp3_nios2_qsys_0_custom_instruction_master_multi_xconnect ; --             ;
 ; IP_TOOL_NAME                        ; altera_avalon_onchip_memory2                                          ; --            ; microarquiteturaGp3_onchip_memory2_0                                      ; --             ;
@@ -138,7 +140,8 @@ applicable agreement for further details.
 ; IP_TOOL_VERSION                     ; 13.0                                                                  ; --            ; microarquiteturaGp3_id_router                                             ; --             ;
 ; IP_TOOL_VERSION                     ; 13.0                                                                  ; --            ; microarquiteturaGp3_irq_mapper                                            ; --             ;
 ; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                           ; --            ; microarquiteturaGp3_jtag_uart_0                                           ; --             ;
-; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                           ; --            ; microarquiteturaGp3_leds                                                  ; --             ;
+; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                           ; --            ; microarquiteturaGp3_leds_columns                                          ; --             ;
+; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                           ; --            ; microarquiteturaGp3_leds_rows                                             ; --             ;
 ; IP_TOOL_VERSION                     ; 13.0                                                                  ; --            ; microarquiteturaGp3_nios2_qsys_0                                          ; --             ;
 ; IP_TOOL_VERSION                     ; 13.0                                                                  ; --            ; microarquiteturaGp3_nios2_qsys_0_custom_instruction_master_multi_xconnect ; --             ;
 ; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                           ; --            ; microarquiteturaGp3_onchip_memory2_0                                      ; --             ;
@@ -155,7 +158,7 @@ applicable agreement for further details.
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                   ; --            ; --                                                                        ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                 ; --            ; --                                                                        ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                          ; --            ; --                                                                        ; --             ;
-; SLD_INFO                            ; QSYS_NAME microarquiteturaGp3 HAS_SOPCINFO 1 GENERATION_ID 1561488476 ; --            ; --                                                                        ; --             ;
+; SLD_INFO                            ; QSYS_NAME microarquiteturaGp3 HAS_SOPCINFO 1 GENERATION_ID 1561560873 ; --            ; --                                                                        ; --             ;
 ; SOPCINFO_FILE                       ; microarquiteturaGp3/synthesis/../../microarquiteturaGp3.sopcinfo      ; --            ; --                                                                        ; --             ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                                    ; --            ; --                                                                        ; --             ;
 +-------------------------------------+-----------------------------------------------------------------------+---------------+---------------------------------------------------------------------------+----------------+
@@ -166,12 +169,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:33     ; 1.0                     ; 406 MB              ; 00:00:30                           ;
-; Fitter                    ; 00:00:59     ; 1.0                     ; 574 MB              ; 00:00:56                           ;
-; Assembler                 ; 00:00:09     ; 1.0                     ; 341 MB              ; 00:00:08                           ;
-; TimeQuest Timing Analyzer ; 00:00:12     ; 1.0                     ; 384 MB              ; 00:00:11                           ;
-; EDA Netlist Writer        ; 00:00:11     ; 1.0                     ; 336 MB              ; 00:00:10                           ;
-; Total                     ; 00:02:04     ; --                      ; --                  ; 00:01:55                           ;
+; Analysis & Synthesis      ; 00:00:34     ; 1.0                     ; 410 MB              ; 00:00:34                           ;
+; Fitter                    ; 00:00:57     ; 1.0                     ; 574 MB              ; 00:00:56                           ;
+; Assembler                 ; 00:00:08     ; 1.0                     ; 341 MB              ; 00:00:09                           ;
+; TimeQuest Timing Analyzer ; 00:00:11     ; 1.0                     ; 396 MB              ; 00:00:11                           ;
+; EDA Netlist Writer        ; 00:00:10     ; 1.0                     ; 336 MB              ; 00:00:10                           ;
+; Total                     ; 00:02:00     ; --                      ; --                  ; 00:02:00                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

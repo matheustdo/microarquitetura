@@ -14,7 +14,7 @@
 
 # Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 # File: /home/aluno/Documentos/microarquiteturaGp3/microarquiteturaGp3.csv
-# Generated on: Tue Jun 25 17:25:07 2019
+# Generated on: Wed Jun 26 12:26:37 2019
 
 # Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
 
@@ -24,6 +24,11 @@ buttons_export[2],Input,PIN_W19,5,B5_N3,PIN_W19,,,,,
 buttons_export[1],Input,PIN_U21,5,B5_N1,PIN_U21,,,,,
 buttons_export[0],Input,PIN_U22,5,B5_N2,PIN_U22,,,,,
 clk_clk,Input,PIN_T1,2,B2_N0,PIN_T1,,,,,
+columns_export[4],Output,PIN_L8,1,B1_N2,PIN_A8,,,,,
+columns_export[3],Output,PIN_J8,1,B1_N1,PIN_D10,,,,,
+columns_export[2],Output,PIN_K8,1,B1_N2,PIN_B10,,,,,
+columns_export[1],Output,PIN_J6,1,B1_N1,PIN_A9,,,,,
+columns_export[0],Output,PIN_J7,1,B1_N2,PIN_E10,,,,,
 lcd_data_out[7],Output,PIN_Y3,3,B3_N3,PIN_Y3,,,,,
 lcd_data_out[6],Output,PIN_V3,2,B2_N3,PIN_V3,,,,,
 lcd_data_out[5],Output,PIN_Y4,3,B3_N3,PIN_Y4,,,,,
@@ -35,9 +40,12 @@ lcd_data_out[0],Output,PIN_V8,3,B3_N2,PIN_V8,,,,,
 lcd_enable_op,Output,PIN_V9,3,B3_N1,PIN_V9,,,,,
 lcd_read_write,Output,PIN_U8,3,B3_N3,PIN_U8,,,,,
 lcd_register_select,Output,PIN_U9,3,B3_N2,PIN_U9,,,,,
-leds_export[4],Output,PIN_L8,1,B1_N2,PIN_F9,,,,,
-leds_export[3],Output,PIN_J8,1,B1_N1,PIN_G9,,,,,
-leds_export[2],Output,PIN_K8,1,B1_N2,PIN_E9,,,,,
-leds_export[1],Output,PIN_J6,1,B1_N1,PIN_J6,,,,,
-leds_export[0],Output,PIN_J7,1,B1_N2,PIN_J7,,,,,
 reset_reset_n,Input,PIN_V21,5,B5_N2,PIN_V21,,,,,
+rows_export[7],Output,PIN_H11,8,B8_N1,PIN_F11,,,,,
+rows_export[6],Output,PIN_G8,8,B8_N3,PIN_E11,,,,,
+rows_export[5],Output,PIN_F8,8,B8_N3,PIN_B13,,,,,
+rows_export[4],Output,PIN_F9,8,B8_N3,PIN_B9,,,,,
+rows_export[3],Output,PIN_G9,8,B8_N3,PIN_C10,,,,,
+rows_export[2],Output,PIN_E9,8,B8_N1,PIN_E12,,,,,
+rows_export[1],Output,PIN_C8,8,B8_N1,PIN_B14,,,,,
+rows_export[0],Output,PIN_F10,8,B8_N2,PIN_A10,,,,,

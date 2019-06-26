@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Jun 25 17:25:58 2019
+Analysis & Synthesis Status : Successful - Wed Jun 26 12:27:25 2019
 Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : microarquiteturaGp3
 Top-level Entity Name : microarquiteturaGp3
 Family : Cyclone IV E
-Total logic elements : 1,858
-    Total combinational functions : 1,670
-    Dedicated logic registers : 979
-Total registers : 979
-Total pins : 22
+Total logic elements : 1,920
+    Total combinational functions : 1,721
+    Dedicated logic registers : 1,009
+Total registers : 1009
+Total pins : 30
 Total virtual pins : 0
 Total memory bits : 44,032
 Embedded Multiplier 9-bit elements : 0

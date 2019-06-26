@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE EP4CE30F23C7
 set_global_assignment -name TOP_LEVEL_ENTITY microarquiteturaGp3
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:47:16  JUNE 25, 2019"
-set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -59,11 +59,6 @@ set_location_assignment PIN_U22 -to buttons_export[0]
 set_location_assignment PIN_U21 -to buttons_export[1]
 set_location_assignment PIN_W19 -to buttons_export[2]
 set_location_assignment PIN_Y17 -to buttons_export[3]
-set_location_assignment PIN_J7 -to leds_export[0]
-set_location_assignment PIN_J6 -to leds_export[1]
-set_location_assignment PIN_K8 -to leds_export[2]
-set_location_assignment PIN_J8 -to leds_export[3]
-set_location_assignment PIN_L8 -to leds_export[4]
 set_location_assignment PIN_U9 -to lcd_register_select
 set_location_assignment PIN_U8 -to lcd_read_write
 set_location_assignment PIN_V9 -to lcd_enable_op
@@ -78,4 +73,17 @@ set_location_assignment PIN_Y3 -to lcd_data_out[7]
 set_location_assignment PIN_T1 -to clk_clk
 set_location_assignment PIN_V21 -to reset_reset_n
 set_global_assignment -name QIP_FILE microarquiteturaGp3/synthesis/microarquiteturaGp3.qip
+set_location_assignment PIN_L8 -to columns_export[4]
+set_location_assignment PIN_J8 -to columns_export[3]
+set_location_assignment PIN_K8 -to columns_export[2]
+set_location_assignment PIN_J6 -to columns_export[1]
+set_location_assignment PIN_J7 -to columns_export[0]
+set_location_assignment PIN_H11 -to rows_export[7]
+set_location_assignment PIN_G8 -to rows_export[6]
+set_location_assignment PIN_F8 -to rows_export[5]
+set_location_assignment PIN_F9 -to rows_export[4]
+set_location_assignment PIN_G9 -to rows_export[3]
+set_location_assignment PIN_E9 -to rows_export[2]
+set_location_assignment PIN_C8 -to rows_export[1]
+set_location_assignment PIN_F10 -to rows_export[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

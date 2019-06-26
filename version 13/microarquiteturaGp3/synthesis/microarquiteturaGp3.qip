@@ -2,7 +2,7 @@ set_global_assignment -entity "microarquiteturaGp3" -library "microarquiteturaGp
 set_global_assignment -entity "microarquiteturaGp3" -library "microarquiteturaGp3" -name IP_TOOL_VERSION "13.0sp1"
 set_global_assignment -entity "microarquiteturaGp3" -library "microarquiteturaGp3" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "microarquiteturaGp3" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../microarquiteturaGp3.sopcinfo"]
-set_instance_assignment -entity "microarquiteturaGp3" -library "microarquiteturaGp3" -name SLD_INFO "QSYS_NAME microarquiteturaGp3 HAS_SOPCINFO 1 GENERATION_ID 1561488476"
+set_instance_assignment -entity "microarquiteturaGp3" -library "microarquiteturaGp3" -name SLD_INFO "QSYS_NAME microarquiteturaGp3 HAS_SOPCINFO 1 GENERATION_ID 1561560873"
 set_global_assignment -library "microarquiteturaGp3" -name MISC_FILE [file join $::quartus(qip_path) "../../microarquiteturaGp3.cmp"]
 set_global_assignment -name SYNTHESIS_ONLY_QIP ON
 set_global_assignment -library "microarquiteturaGp3" -name MISC_FILE [file join $::quartus(qip_path) "../../microarquiteturaGp3.qsys"]
@@ -28,9 +28,10 @@ set_global_assignment -library "microarquiteturaGp3" -name SYSTEMVERILOG_FILE [f
 set_global_assignment -library "microarquiteturaGp3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_customins_slave_translator.sv"]
 set_global_assignment -library "microarquiteturaGp3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/microarquiteturaGp3_nios2_qsys_0_custom_instruction_master_multi_xconnect.sv"]
 set_global_assignment -library "microarquiteturaGp3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_customins_master_translator.v"]
+set_global_assignment -library "microarquiteturaGp3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/microarquiteturaGp3_leds_rows.v"]
 set_global_assignment -library "microarquiteturaGp3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/init_lcd.v"]
 set_global_assignment -library "microarquiteturaGp3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/microarquiteturaGp3_jtag_uart_0.v"]
-set_global_assignment -library "microarquiteturaGp3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/microarquiteturaGp3_leds.v"]
+set_global_assignment -library "microarquiteturaGp3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/microarquiteturaGp3_leds_columns.v"]
 set_global_assignment -library "microarquiteturaGp3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/microarquiteturaGp3_buttons.v"]
 set_global_assignment -library "microarquiteturaGp3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/microarquiteturaGp3_onchip_memory2_0.v"]
 set_global_assignment -library "microarquiteturaGp3" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/microarquiteturaGp3_onchip_memory2_0.hex"]
@@ -93,12 +94,15 @@ set_global_assignment -entity "microarquiteturaGp3_nios2_qsys_0_custom_instructi
 set_global_assignment -entity "altera_customins_master_translator" -library "microarquiteturaGp3" -name IP_TOOL_NAME "altera_customins_master_translator"
 set_global_assignment -entity "altera_customins_master_translator" -library "microarquiteturaGp3" -name IP_TOOL_VERSION "13.0"
 set_global_assignment -entity "altera_customins_master_translator" -library "microarquiteturaGp3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "microarquiteturaGp3_leds_rows" -library "microarquiteturaGp3" -name IP_TOOL_NAME "altera_avalon_pio"
+set_global_assignment -entity "microarquiteturaGp3_leds_rows" -library "microarquiteturaGp3" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "microarquiteturaGp3_leds_rows" -library "microarquiteturaGp3" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -entity "microarquiteturaGp3_jtag_uart_0" -library "microarquiteturaGp3" -name IP_TOOL_NAME "altera_avalon_jtag_uart"
 set_global_assignment -entity "microarquiteturaGp3_jtag_uart_0" -library "microarquiteturaGp3" -name IP_TOOL_VERSION "13.0.1.99.2"
 set_global_assignment -entity "microarquiteturaGp3_jtag_uart_0" -library "microarquiteturaGp3" -name IP_TOOL_ENV "Qsys"
-set_global_assignment -entity "microarquiteturaGp3_leds" -library "microarquiteturaGp3" -name IP_TOOL_NAME "altera_avalon_pio"
-set_global_assignment -entity "microarquiteturaGp3_leds" -library "microarquiteturaGp3" -name IP_TOOL_VERSION "13.0.1.99.2"
-set_global_assignment -entity "microarquiteturaGp3_leds" -library "microarquiteturaGp3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "microarquiteturaGp3_leds_columns" -library "microarquiteturaGp3" -name IP_TOOL_NAME "altera_avalon_pio"
+set_global_assignment -entity "microarquiteturaGp3_leds_columns" -library "microarquiteturaGp3" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "microarquiteturaGp3_leds_columns" -library "microarquiteturaGp3" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -entity "microarquiteturaGp3_buttons" -library "microarquiteturaGp3" -name IP_TOOL_NAME "altera_avalon_pio"
 set_global_assignment -entity "microarquiteturaGp3_buttons" -library "microarquiteturaGp3" -name IP_TOOL_VERSION "13.0.1.99.2"
 set_global_assignment -entity "microarquiteturaGp3_buttons" -library "microarquiteturaGp3" -name IP_TOOL_ENV "Qsys"
