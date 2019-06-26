@@ -1,0 +1,283 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 24 112 192 128)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "clk" (rect 5 0 17 10)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 16 192 184 208)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "buttons[0..3]" (rect 5 0 64 10)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 0 232 176 248)
+	(text "OUTPUT" (rect 137 0 175 9)(font "Arial" (font_size 6)))
+	(text "leds[0..4]" (rect 5 0 48 10)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 176 8)(pt 124 8))
+		(line (pt 124 4)(pt 98 4))
+		(line (pt 124 12)(pt 98 12))
+		(line (pt 124 12)(pt 124 4))
+		(line (pt 98 4)(pt 94 8))
+		(line (pt 94 8)(pt 98 12))
+		(line (pt 98 12)(pt 94 8))
+	)
+	(flipy)
+)
+(pin
+	(output)
+	(rect 0 272 176 288)
+	(text "OUTPUT" (rect 137 0 175 9)(font "Arial" (font_size 6)))
+	(text "read_write" (rect 5 0 54 10)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 176 8)(pt 124 8))
+		(line (pt 124 4)(pt 98 4))
+		(line (pt 124 12)(pt 98 12))
+		(line (pt 124 12)(pt 124 4))
+		(line (pt 98 4)(pt 94 8))
+		(line (pt 94 8)(pt 98 12))
+		(line (pt 98 12)(pt 94 8))
+	)
+	(flipy)
+)
+(pin
+	(output)
+	(rect 0 288 176 304)
+	(text "OUTPUT" (rect 137 0 175 9)(font "Arial" (font_size 6)))
+	(text "register_select" (rect 5 0 74 10)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 176 8)(pt 124 8))
+		(line (pt 124 4)(pt 98 4))
+		(line (pt 124 12)(pt 98 12))
+		(line (pt 124 12)(pt 124 4))
+		(line (pt 98 4)(pt 94 8))
+		(line (pt 94 8)(pt 98 12))
+		(line (pt 98 12)(pt 94 8))
+	)
+	(flipy)
+)
+(pin
+	(output)
+	(rect 0 304 176 320)
+	(text "OUTPUT" (rect 137 0 175 9)(font "Arial" (font_size 6)))
+	(text "enable_op" (rect 5 0 54 10)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 176 8)(pt 124 8))
+		(line (pt 124 4)(pt 98 4))
+		(line (pt 124 12)(pt 98 12))
+		(line (pt 124 12)(pt 124 4))
+		(line (pt 98 4)(pt 94 8))
+		(line (pt 94 8)(pt 98 12))
+		(line (pt 98 12)(pt 94 8))
+	)
+	(flipy)
+)
+(pin
+	(output)
+	(rect 0 320 176 336)
+	(text "OUTPUT" (rect 137 0 175 9)(font "Arial" (font_size 6)))
+	(text "data_out[7..0]" (rect 5 0 69 10)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 176 8)(pt 124 8))
+		(line (pt 124 4)(pt 98 4))
+		(line (pt 124 12)(pt 98 12))
+		(line (pt 124 12)(pt 124 4))
+		(line (pt 98 4)(pt 94 8))
+		(line (pt 94 8)(pt 98 12))
+		(line (pt 98 12)(pt 94 8))
+	)
+	(flipy)
+)
+(symbol
+	(rect 232 48 536 360)
+	(text "microarquiteturaGp3" (rect 93 -1 233 14)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 296 24 306)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 38 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 42 73)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 112 72))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "reset_reset_n" (rect 0 0 80 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 101 84 113)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 112 112))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "buttons_export[3..0]" (rect 0 0 115 12)(font "Arial" (font_size 8)))
+		(text "buttons_export[3..0]" (rect 4 141 119 153)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 112 152)(line_width 3))
+	)
+	(port
+		(pt 0 192)
+		(output)
+		(text "leds_export[4..0]" (rect 0 0 96 12)(font "Arial" (font_size 8)))
+		(text "leds_export[4..0]" (rect 4 181 100 193)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 112 192)(line_width 3))
+	)
+	(port
+		(pt 0 232)
+		(output)
+		(text "lcd_read_write" (rect 0 0 84 12)(font "Arial" (font_size 8)))
+		(text "lcd_read_write" (rect 4 221 88 233)(font "Arial" (font_size 8)))
+		(line (pt 0 232)(pt 112 232))
+	)
+	(port
+		(pt 0 248)
+		(output)
+		(text "lcd_register_select" (rect 0 0 108 12)(font "Arial" (font_size 8)))
+		(text "lcd_register_select" (rect 4 237 112 249)(font "Arial" (font_size 8)))
+		(line (pt 0 248)(pt 112 248))
+	)
+	(port
+		(pt 0 264)
+		(output)
+		(text "lcd_enable_op" (rect 0 0 84 12)(font "Arial" (font_size 8)))
+		(text "lcd_enable_op" (rect 4 253 88 265)(font "Arial" (font_size 8)))
+		(line (pt 0 264)(pt 112 264))
+	)
+	(port
+		(pt 0 280)
+		(output)
+		(text "lcd_data_out[7..0]" (rect 0 0 103 12)(font "Arial" (font_size 8)))
+		(text "lcd_data_out[7..0]" (rect 4 269 107 281)(font "Arial" (font_size 8)))
+		(line (pt 0 280)(pt 112 280)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 97 43 115 57)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 117 67 129 77)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 83 83 116 97)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 117 107 152 117)(font "Arial" (color 0 0 0)))
+		(text "buttons" (rect 70 123 117 137)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 117 147 146 157)(font "Arial" (color 0 0 0)))
+		(text "leds" (rect 89 163 114 177)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 117 187 146 197)(font "Arial" (color 0 0 0)))
+		(text "lcd" (rect 97 203 115 217)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "read_write" (rect 117 227 166 237)(font "Arial" (color 0 0 0)))
+		(text "register_select" (rect 117 243 186 253)(font "Arial" (color 0 0 0)))
+		(text "enable_op" (rect 117 259 166 269)(font "Arial" (color 0 0 0)))
+		(text "data_out" (rect 117 275 158 285)(font "Arial" (color 0 0 0)))
+		(text " microarquiteturaGp3 " (rect 214 296 316 306)(font "Arial" ))
+		(line (pt 113 52)(pt 113 76))
+		(line (pt 114 52)(pt 114 76))
+		(line (pt 113 92)(pt 113 116))
+		(line (pt 114 92)(pt 114 116))
+		(line (pt 113 132)(pt 113 156))
+		(line (pt 114 132)(pt 114 156))
+		(line (pt 113 172)(pt 113 196))
+		(line (pt 114 172)(pt 114 196))
+		(line (pt 113 212)(pt 113 284))
+		(line (pt 114 212)(pt 114 284))
+		(line (pt 112 32)(pt 192 32))
+		(line (pt 192 32)(pt 192 296))
+		(line (pt 112 296)(pt 192 296))
+		(line (pt 112 32)(pt 112 296))
+		(line (pt 0 0)(pt 304 0))
+		(line (pt 304 0)(pt 304 312))
+		(line (pt 0 312)(pt 304 312))
+		(line (pt 0 0)(pt 0 312))
+	)
+)
+(symbol
+	(rect 128 144 160 160)
+	(text "VCC" (rect 7 0 27 9)(font "Arial" (font_size 6)))
+	(text "inst1" (rect 3 5 25 15)(font "Arial" )(invisible))
+	(port
+		(pt 16 16)
+		(output)
+		(text "1" (rect 19 7 27 18)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 19 7 27 18)(font "Courier New" (bold))(invisible))
+		(line (pt 16 16)(pt 16 8))
+	)
+	(drawing
+		(line (pt 8 8)(pt 24 8))
+	)
+)
+(connector
+	(pt 144 160)
+	(pt 232 160)
+)
+(connector
+	(pt 192 120)
+	(pt 232 120)
+)
+(connector
+	(pt 184 200)
+	(pt 232 200)
+	(bus)
+)
+(connector
+	(pt 176 240)
+	(pt 232 240)
+	(bus)
+)
+(connector
+	(pt 176 280)
+	(pt 232 280)
+)
+(connector
+	(pt 176 296)
+	(pt 232 296)
+)
+(connector
+	(pt 176 312)
+	(pt 232 312)
+)
+(connector
+	(pt 176 328)
+	(pt 232 328)
+	(bus)
+)

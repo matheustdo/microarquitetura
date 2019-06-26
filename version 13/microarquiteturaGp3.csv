@@ -1,0 +1,43 @@
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+# Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# File: /home/aluno/Documentos/microarquiteturaGp3/microarquiteturaGp3.csv
+# Generated on: Tue Jun 25 17:25:07 2019
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair
+buttons_export[3],Input,PIN_Y17,4,B4_N0,PIN_Y17,,,,,
+buttons_export[2],Input,PIN_W19,5,B5_N3,PIN_W19,,,,,
+buttons_export[1],Input,PIN_U21,5,B5_N1,PIN_U21,,,,,
+buttons_export[0],Input,PIN_U22,5,B5_N2,PIN_U22,,,,,
+clk_clk,Input,PIN_T1,2,B2_N0,PIN_T1,,,,,
+lcd_data_out[7],Output,PIN_Y3,3,B3_N3,PIN_Y3,,,,,
+lcd_data_out[6],Output,PIN_V3,2,B2_N3,PIN_V3,,,,,
+lcd_data_out[5],Output,PIN_Y4,3,B3_N3,PIN_Y4,,,,,
+lcd_data_out[4],Output,PIN_V4,2,B2_N3,PIN_V4,,,,,
+lcd_data_out[3],Output,PIN_V5,3,B3_N3,PIN_V5,,,,,
+lcd_data_out[2],Output,PIN_V6,3,B3_N3,PIN_V6,,,,,
+lcd_data_out[1],Output,PIN_V7,3,B3_N2,PIN_V7,,,,,
+lcd_data_out[0],Output,PIN_V8,3,B3_N2,PIN_V8,,,,,
+lcd_enable_op,Output,PIN_V9,3,B3_N1,PIN_V9,,,,,
+lcd_read_write,Output,PIN_U8,3,B3_N3,PIN_U8,,,,,
+lcd_register_select,Output,PIN_U9,3,B3_N2,PIN_U9,,,,,
+leds_export[4],Output,PIN_L8,1,B1_N2,PIN_F9,,,,,
+leds_export[3],Output,PIN_J8,1,B1_N1,PIN_G9,,,,,
+leds_export[2],Output,PIN_K8,1,B1_N2,PIN_E9,,,,,
+leds_export[1],Output,PIN_J6,1,B1_N1,PIN_J6,,,,,
+leds_export[0],Output,PIN_J7,1,B1_N2,PIN_J7,,,,,
+reset_reset_n,Input,PIN_V21,5,B5_N2,PIN_V21,,,,,

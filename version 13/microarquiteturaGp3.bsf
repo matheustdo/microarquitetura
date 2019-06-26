@@ -1,0 +1,116 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 304 312)
+	(text "microarquiteturaGp3" (rect 93 -1 173 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 296 20 308)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 46 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 112 72)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "reset_reset_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 101 82 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 112 112)(line_width 1))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "buttons_export[3..0]" (rect 0 0 79 12)(font "Arial" (font_size 8)))
+		(text "buttons_export[3..0]" (rect 4 141 124 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 112 152)(line_width 3))
+	)
+	(port
+		(pt 0 192)
+		(output)
+		(text "leds_export[4..0]" (rect 0 0 67 12)(font "Arial" (font_size 8)))
+		(text "leds_export[4..0]" (rect 4 181 106 192)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 112 192)(line_width 3))
+	)
+	(port
+		(pt 0 232)
+		(output)
+		(text "lcd_read_write" (rect 0 0 57 12)(font "Arial" (font_size 8)))
+		(text "lcd_read_write" (rect 4 221 88 232)(font "Arial" (font_size 8)))
+		(line (pt 0 232)(pt 112 232)(line_width 1))
+	)
+	(port
+		(pt 0 248)
+		(output)
+		(text "lcd_register_select" (rect 0 0 74 12)(font "Arial" (font_size 8)))
+		(text "lcd_register_select" (rect 4 237 118 248)(font "Arial" (font_size 8)))
+		(line (pt 0 248)(pt 112 248)(line_width 1))
+	)
+	(port
+		(pt 0 264)
+		(output)
+		(text "lcd_enable_op" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "lcd_enable_op" (rect 4 253 82 264)(font "Arial" (font_size 8)))
+		(line (pt 0 264)(pt 112 264)(line_width 1))
+	)
+	(port
+		(pt 0 280)
+		(output)
+		(text "lcd_data_out[7..0]" (rect 0 0 70 12)(font "Arial" (font_size 8)))
+		(text "lcd_data_out[7..0]" (rect 4 269 112 280)(font "Arial" (font_size 8)))
+		(line (pt 0 280)(pt 112 280)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 97 43 212 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 117 67 252 144)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 83 83 196 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 117 107 276 224)(font "Arial" (color 0 0 0)))
+		(text "buttons" (rect 70 123 182 259)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 117 147 270 304)(font "Arial" (color 0 0 0)))
+		(text "leds" (rect 89 163 202 339)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 117 187 270 384)(font "Arial" (color 0 0 0)))
+		(text "lcd" (rect 97 203 212 419)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "read_write" (rect 117 227 294 464)(font "Arial" (color 0 0 0)))
+		(text "register_select" (rect 117 243 324 496)(font "Arial" (color 0 0 0)))
+		(text "enable_op" (rect 117 259 288 528)(font "Arial" (color 0 0 0)))
+		(text "data_out" (rect 117 275 282 560)(font "Arial" (color 0 0 0)))
+		(text " microarquiteturaGp3 " (rect 214 296 554 602)(font "Arial" ))
+		(line (pt 113 52)(pt 113 76)(line_width 1))
+		(line (pt 114 52)(pt 114 76)(line_width 1))
+		(line (pt 113 92)(pt 113 116)(line_width 1))
+		(line (pt 114 92)(pt 114 116)(line_width 1))
+		(line (pt 113 132)(pt 113 156)(line_width 1))
+		(line (pt 114 132)(pt 114 156)(line_width 1))
+		(line (pt 113 172)(pt 113 196)(line_width 1))
+		(line (pt 114 172)(pt 114 196)(line_width 1))
+		(line (pt 113 212)(pt 113 284)(line_width 1))
+		(line (pt 114 212)(pt 114 284)(line_width 1))
+		(line (pt 112 32)(pt 192 32)(line_width 1))
+		(line (pt 192 32)(pt 192 296)(line_width 1))
+		(line (pt 112 296)(pt 192 296)(line_width 1))
+		(line (pt 112 32)(pt 112 296)(line_width 1))
+		(line (pt 0 0)(pt 304 0)(line_width 1))
+		(line (pt 304 0)(pt 304 312)(line_width 1))
+		(line (pt 0 312)(pt 304 312)(line_width 1))
+		(line (pt 0 0)(pt 0 312)(line_width 1))
+	)
+)

@@ -1,0 +1,156 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory=/home/aluno/Documentos/microarquiteturaGp3/ --output-directory=/home/aluno/Documentos/microarquiteturaGp3/microarquiteturaGp3/ --report-file=bsf:/home/aluno/Documentos/microarquiteturaGp3/microarquiteturaGp3.bsf --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE30F23C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=/home/aluno/Documentos/microarquiteturaGp3/microarquiteturaGp3.qsys
+Progress: Loading microarquiteturaGp3/microarquiteturaGp3.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.0]
+Progress: Parameterizing module clk_0
+Progress: Adding nios2_qsys_0 [altera_nios2_qsys 13.0]
+Progress: Parameterizing module nios2_qsys_0
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 13.0.1.99.2]
+Progress: Parameterizing module onchip_memory2_0
+Progress: Adding buttons [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module buttons
+Progress: Adding leds [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module leds
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 13.0.1.99.2]
+Progress: Parameterizing module jtag_uart_0
+Progress: Adding LCD_Custom_instruction_0 [LCD_Custom_instruction 1.0]
+Progress: Parameterizing module LCD_Custom_instruction_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: microarquiteturaGp3.buttons: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory=/home/aluno/Documentos/microarquiteturaGp3/ --output-directory=/home/aluno/Documentos/microarquiteturaGp3/microarquiteturaGp3/synthesis/ --file-set=QUARTUS_SYNTH --report-file=sopcinfo:/home/aluno/Documentos/microarquiteturaGp3/microarquiteturaGp3.sopcinfo --report-file=html:/home/aluno/Documentos/microarquiteturaGp3/microarquiteturaGp3.html --report-file=qip:/home/aluno/Documentos/microarquiteturaGp3/microarquiteturaGp3/synthesis/microarquiteturaGp3.qip --report-file=cmp:/home/aluno/Documentos/microarquiteturaGp3/microarquiteturaGp3.cmp --report-file=svd --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE30F23C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=/home/aluno/Documentos/microarquiteturaGp3/microarquiteturaGp3.qsys --language=VERILOG
+Progress: Loading microarquiteturaGp3/microarquiteturaGp3.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.0]
+Progress: Parameterizing module clk_0
+Progress: Adding nios2_qsys_0 [altera_nios2_qsys 13.0]
+Progress: Parameterizing module nios2_qsys_0
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 13.0.1.99.2]
+Progress: Parameterizing module onchip_memory2_0
+Progress: Adding buttons [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module buttons
+Progress: Adding leds [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module leds
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 13.0.1.99.2]
+Progress: Parameterizing module jtag_uart_0
+Progress: Adding LCD_Custom_instruction_0 [LCD_Custom_instruction 1.0]
+Progress: Parameterizing module LCD_Custom_instruction_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: microarquiteturaGp3.buttons: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: microarquiteturaGp3: Generating microarquiteturaGp3 "microarquiteturaGp3" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 7 modules, 22 connections
+Info: merlin_custom_instruction_transform: After transform: 10 modules, 25 connections
+Info: merlin_translator_transform: After transform: 17 modules, 46 connections
+Info: merlin_domain_transform: After transform: 30 modules, 110 connections
+Info: merlin_router_transform: After transform: 37 modules, 131 connections
+Info: reset_adaptation_transform: After transform: 38 modules, 133 connections
+Info: merlin_network_to_switch_transform: After transform: 51 modules, 167 connections
+Info: merlin_mm_transform: After transform: 51 modules, 167 connections
+Info: merlin_interrupt_mapper_transform: After transform: 52 modules, 170 connections
+Warning: microarquiteturaGp3: "No matching role found for nios2_qsys_0_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_ipending (ipending)"
+Warning: microarquiteturaGp3: "No matching role found for nios2_qsys_0_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_estatus (estatus)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: microarquiteturaGp3: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Info: nios2_qsys_0: Starting RTL generation for module 'microarquiteturaGp3_nios2_qsys_0'
+Info: nios2_qsys_0:   Generation command is [exec /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2/eperl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2 -I /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2 -- /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=microarquiteturaGp3_nios2_qsys_0 --dir=/tmp/alt8072_8872407834832761469.dir/0002_nios2_qsys_0_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt8072_8872407834832761469.dir/0002_nios2_qsys_0_gen//microarquiteturaGp3_nios2_qsys_0_processor_configuration.pl  --do_build_sim=0    --bogus  ]
+Info: nios2_qsys_0: # 2019.06.25 12:15:28 (*) Starting Nios II generation
+Info: nios2_qsys_0: # 2019.06.25 12:15:28 (*)   Checking for plaintext license.
+Info: nios2_qsys_0: # 2019.06.25 12:15:32 (*)   Plaintext license not found.
+Info: nios2_qsys_0: # 2019.06.25 12:15:32 (*)   No license required to generate encrypted Nios II/e.
+Info: nios2_qsys_0: # 2019.06.25 12:15:32 (*)   Elaborating CPU configuration settings
+Info: nios2_qsys_0: # 2019.06.25 12:15:32 (*)   Creating all objects for CPU
+Info: nios2_qsys_0: # 2019.06.25 12:15:36 (*)   Generating RTL from CPU objects
+Info: nios2_qsys_0: # 2019.06.25 12:15:36 (*)   Creating plain-text RTL
+Info: nios2_qsys_0: # 2019.06.25 12:15:44 (*) Done Nios II generation
+Info: nios2_qsys_0: Done RTL generation for module 'microarquiteturaGp3_nios2_qsys_0'
+Info: nios2_qsys_0: "microarquiteturaGp3" instantiated altera_nios2_qsys "nios2_qsys_0"
+Info: onchip_memory2_0: Starting RTL generation for module 'microarquiteturaGp3_onchip_memory2_0'
+Info: onchip_memory2_0:   Generation command is [exec /opt/altera/13sp1/quartus/linux/perl/bin/perl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=microarquiteturaGp3_onchip_memory2_0 --dir=/tmp/alt8072_8872407834832761469.dir/0003_onchip_memory2_0_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt8072_8872407834832761469.dir/0003_onchip_memory2_0_gen//microarquiteturaGp3_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory2_0: Done RTL generation for module 'microarquiteturaGp3_onchip_memory2_0'
+Info: onchip_memory2_0: "microarquiteturaGp3" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
+Info: buttons: Starting RTL generation for module 'microarquiteturaGp3_buttons'
+Info: buttons:   Generation command is [exec /opt/altera/13sp1/quartus/linux/perl/bin/perl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=microarquiteturaGp3_buttons --dir=/tmp/alt8072_8872407834832761469.dir/0004_buttons_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt8072_8872407834832761469.dir/0004_buttons_gen//microarquiteturaGp3_buttons_component_configuration.pl  --do_build_sim=0  ]
+Info: buttons: Done RTL generation for module 'microarquiteturaGp3_buttons'
+Info: buttons: "microarquiteturaGp3" instantiated altera_avalon_pio "buttons"
+Info: leds: Starting RTL generation for module 'microarquiteturaGp3_leds'
+Info: leds:   Generation command is [exec /opt/altera/13sp1/quartus/linux/perl/bin/perl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=microarquiteturaGp3_leds --dir=/tmp/alt8072_8872407834832761469.dir/0005_leds_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt8072_8872407834832761469.dir/0005_leds_gen//microarquiteturaGp3_leds_component_configuration.pl  --do_build_sim=0  ]
+Info: leds: Done RTL generation for module 'microarquiteturaGp3_leds'
+Info: leds: "microarquiteturaGp3" instantiated altera_avalon_pio "leds"
+Info: jtag_uart_0: Starting RTL generation for module 'microarquiteturaGp3_jtag_uart_0'
+Info: jtag_uart_0:   Generation command is [exec /opt/altera/13sp1/quartus/linux/perl/bin/perl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=microarquiteturaGp3_jtag_uart_0 --dir=/tmp/alt8072_8872407834832761469.dir/0006_jtag_uart_0_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt8072_8872407834832761469.dir/0006_jtag_uart_0_gen//microarquiteturaGp3_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart_0: Done RTL generation for module 'microarquiteturaGp3_jtag_uart_0'
+Info: jtag_uart_0: "microarquiteturaGp3" instantiated altera_avalon_jtag_uart "jtag_uart_0"
+Info: LCD_Custom_instruction_0: "microarquiteturaGp3" instantiated LCD_Custom_instruction "LCD_Custom_instruction_0"
+Info: nios2_qsys_0_custom_instruction_master_translator: "microarquiteturaGp3" instantiated altera_customins_master_translator "nios2_qsys_0_custom_instruction_master_translator"
+Info: nios2_qsys_0_custom_instruction_master_multi_xconnect: "microarquiteturaGp3" instantiated altera_customins_xconnect "nios2_qsys_0_custom_instruction_master_multi_xconnect"
+Info: nios2_qsys_0_custom_instruction_master_multi_slave_translator0: "microarquiteturaGp3" instantiated altera_customins_slave_translator "nios2_qsys_0_custom_instruction_master_multi_slave_translator0"
+Info: nios2_qsys_0_instruction_master_translator: "microarquiteturaGp3" instantiated altera_merlin_master_translator "nios2_qsys_0_instruction_master_translator"
+Info: nios2_qsys_0_jtag_debug_module_translator: "microarquiteturaGp3" instantiated altera_merlin_slave_translator "nios2_qsys_0_jtag_debug_module_translator"
+Info: nios2_qsys_0_instruction_master_translator_avalon_universal_master_0_agent: "microarquiteturaGp3" instantiated altera_merlin_master_agent "nios2_qsys_0_instruction_master_translator_avalon_universal_master_0_agent"
+Info: nios2_qsys_0_jtag_debug_module_translator_avalon_universal_slave_0_agent: "microarquiteturaGp3" instantiated altera_merlin_slave_agent "nios2_qsys_0_jtag_debug_module_translator_avalon_universal_slave_0_agent"
+Info: nios2_qsys_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: "microarquiteturaGp3" instantiated altera_avalon_sc_fifo "nios2_qsys_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
+Info: addr_router: "microarquiteturaGp3" instantiated altera_merlin_router "addr_router"
+Info: id_router: "microarquiteturaGp3" instantiated altera_merlin_router "id_router"
+Info: rst_controller: "microarquiteturaGp3" instantiated altera_reset_controller "rst_controller"
+Info: cmd_xbar_demux: "microarquiteturaGp3" instantiated altera_merlin_demultiplexer "cmd_xbar_demux"
+Info: cmd_xbar_mux: "microarquiteturaGp3" instantiated altera_merlin_multiplexer "cmd_xbar_mux"
+Info: rsp_xbar_demux: "microarquiteturaGp3" instantiated altera_merlin_demultiplexer "rsp_xbar_demux"
+Info: rsp_xbar_mux: "microarquiteturaGp3" instantiated altera_merlin_multiplexer "rsp_xbar_mux"
+Info: Reusing file /home/aluno/Documentos/microarquiteturaGp3/microarquiteturaGp3/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: irq_mapper: "microarquiteturaGp3" instantiated altera_irq_mapper "irq_mapper"
+Info: microarquiteturaGp3: Done microarquiteturaGp3" with 23 modules, 75 files, 1366196 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

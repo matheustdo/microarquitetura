@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="microarquiteturaGp3">
+		<CBX_INST_ENTRY INSTANCE_NAME="|microarquiteturaGp3|microarquiteturaGp3_jtag_uart_0:jtag_uart_0|microarquiteturaGp3_jtag_uart_0_scfifo_w:the_microarquiteturaGp3_jtag_uart_0_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_jr21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|microarquiteturaGp3|microarquiteturaGp3_nios2_qsys_0:nios2_qsys_0|microarquiteturaGp3_nios2_qsys_0_nios2_oci:the_microarquiteturaGp3_nios2_qsys_0_nios2_oci|microarquiteturaGp3_nios2_qsys_0_nios2_ocimem:the_microarquiteturaGp3_nios2_qsys_0_nios2_ocimem|microarquiteturaGp3_nios2_qsys_0_ociram_sp_ram_module:microarquiteturaGp3_nios2_qsys_0_ociram_sp_ram|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_1l91.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|microarquiteturaGp3|microarquiteturaGp3_nios2_qsys_0:nios2_qsys_0|microarquiteturaGp3_nios2_qsys_0_register_bank_a_module:microarquiteturaGp3_nios2_qsys_0_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_t7i1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|microarquiteturaGp3|microarquiteturaGp3_nios2_qsys_0:nios2_qsys_0|microarquiteturaGp3_nios2_qsys_0_register_bank_b_module:microarquiteturaGp3_nios2_qsys_0_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_u7i1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|microarquiteturaGp3|microarquiteturaGp3_jtag_uart_0:jtag_uart_0|microarquiteturaGp3_jtag_uart_0_scfifo_r:the_microarquiteturaGp3_jtag_uart_0_scfifo_r|scfifo:rfifo" CBX_FILE_NAME="scfifo_jr21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|microarquiteturaGp3|microarquiteturaGp3_onchip_memory2_0:onchip_memory2_0|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_r9e1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
